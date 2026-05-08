@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Google Fonts --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../src/favicon/site.webmanifest">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/output.css">
+
+    <!-- JavaScript -->
+     <script type="module" src="../scripts/listings/single.mjs"></script>
+</head>
+
+
+<body class="bg-gray-100 font-sans">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="mx-auto flex items-center justify-between px-24 py-6">
+
+            <a href="../index.html" class="shrink-0">
+             <img src="../src/logo/Logo-main.png" alt="Biddr Logo" class="h-8 w-auto hover:scale-105">
+            </a>
+
+            <nav>
+                <ul class="flex items-center gap-4 text-primary font-medium">
+                    <li><a id="nav-link-one" href="../account/login.html" class="nav-link">Login</a></li>
+                    <li><a id="nav-link-two" href="../account/register.html" class="nav-link">Register</a></li>
+                </ul>            
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="bg-primary shadow-sm">
+            <nav class="mx-auto flex items-center justify-between px-24 py-4">
+
+                <div class="flex items-center gap-6 mx-auto">
+                    <a href="../index.html" class="nav-link text-white">Home</a>
+                    <a href="../auctions/feed.html" class="nav-link text-white">Listings</a>
+                    <a href="../docs/about.html" class="nav-link text-white">About</a>
+                    <a href="../docs/contact.html" class="nav-link text-white">Contact</a>
+                </div>
+
+                <div class="flex flex-col items-end gap-2 text-white">
+                    <a id="account-link" href="../account/profile.html" class="flex items-center gap-2 nav-link">
+                        <img src="../src/icons/account.png" alt="account icon">My Account
+                    </a>
+                    <a id="credits-link" href="../account/credits.html" class="flex items-center gap-2 nav-link">
+                        <img src="../src/icons/credit.png" alt="credits icon">
+                        <span id="nav-credits">0</span>
+                    </a>
+                </div>
+            </nav>
+        </section>
+
+        <section class="flex flex-row gap-2 items-center px-14 py-6 text-primary text-sm">
+            <a href="../index.html" class="nav-link">Home</a>
+            <p>/</p>
+            <p class="font-bold">Listing</p>
+        </section>
+
+        <section class="mx-auto grid max-w-7xl grid-cols-2 gap-12 px-14 py-8">
+            <div class="relative">
+                <div id="single-listing-carousel" class="overflow-hidden rounded-2xl bg-white shadow-md"></div>
+            
+                <button id="single-carousel-prev" class="absolute left-4 top-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-xl font-bold text-white shadow-md transition duration-200 ease-in-out hover:opacity-80 hover:scale-105 active:scale-95">
+                        &#8249;
+                </button>
+                <button id="single-carousel-next" class="absolute right-4 top-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-xl font-bold text-white shadow-md transition duration-200 ease-in-out hover:opacity-80 hover:scale-105 active:scale-95">
+                        &#8250;
+                </button>
+
+                <div id="single-carousel-counter" class="absolute bottom-4 right-4 rounded-full bg-primary/60 px-3 py-1 text-sm font-medium text-white">
+                    1/1
+                </div>
+            </div>
+            
+            <div class="flex h-full flex-col justify-between gap-6">
+
+                <div class="flex flex-col gap-8">
+
+                    <h1 id="single-title" class="text-4xl font-bold text-primary">
+                        Listing Title
+                    </h1>
+
+                    <div class="flex items-center justify-between gap-6">
+
+                        <a id="single-seller-link" href="#" class="flex w-fit items-center gap-3">
+
+                            <img
+                                id="single-seller-avatar" 
+                                src="../src/images/placeholder.jpg" 
+                                alt="Seller avatar"
+                                class="h-12 w-12 shrink-0 border border-primary rounded-full object-cover"
+                            >
+
+                            <div>
+                                <p class="text-sm text-gray-500">Seller:</p>
+
+                                <p id="single-seller" class="nav-link text-primary font-semibold">
+                                    Seller name
+                                </p>
+                            </div>
+
+                        </a>
+
+                        <div id="owner-actions" class="hidden items-center gap-3">
+
+                            <a
+                                id="edit-listing-button" 
+                                href="#"
+                                class="bg-primary px-4 py-2 text-sm font-medium text-white transition hover:opacity-80">Edit
+                            </a>
+
+                            <button 
+                                id="delte-listing-button"
+                                type="button"
+                                class="border border-red-600 px-4 py-2 text-sm font-medium text-red-600 transition hover:bg-red-600 hover:text-white">Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="single-tags" class="flex flex-wrap gap-2"></div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-xl bg-white p-5 shadow-md">
+                        <p class="text-sm text-gray-500">Current bid</p>
+                        <p id="single-current-bid" class="mt-1 text-2xl font-bold text-primary">0 credits</p>
+                    </div>
+
+                    <div class="rounded-xl bg-white p-5 shadow-md">
+                        <p class="text-sm text-gray-500">Time left</p>
+                        <p id="single-time-left" class="mt-1 text-2xl font-bold text-primary">--:--:--</p>
+                    </div>
+                </div>
+
+                <form id="bid-form" class="rounded-2xl bg-white p-6 shadow-md">
+                    <label for="bid-amount" class="mb-2 block font-medium text-primary">Place a bid</label>
+
+                    <div class="relative">
+                        <button
+                        id="clear-bid-button"
+                        type="button"
+                        class="hidden absolute right-0 -top-8 rounded-full px-3 py-1 text-sm font-medium bg-primary text-white transition hover-opacity-70">Clear
+                        </button>
+
+                        <input 
+                        id="bid-amount"
+                        name="amount"
+                        type="text"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="Enter amount"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 pr-10 text-primary focus:outline-none focus:border-primary">
+                    </div> 
+
+                    <button
+                        id="bid-button" 
+                        type="submit"
+                        class="mt-4 w-full rounded-lg bg-primary px-6 py-3 font-medium text-white shadow-md transition duration-200 ease-in-out hover:opacity-80 hover:shadow-lg active:scale-95">
+                        Bid
+                    </button>                 
+                </form>
+            </div>
+        </section>
+
+        <section class="mx-auto grid max-w-7xl grid-cols-2 gap-12 px-14 py-8">
+            <div>
+                <h2 class="mb-4 text-2xl font-bold text-primary">Description</h2>
+
+                <p id="single-description" class="leading-relaxed text-gray-700 rounded-2xl bg-white p-6 shadow-md">
+                    Listing description goes here.
+                </p>
+            </div>
+
+            <div>
+            <h2 class="mb-4 text-2xl font-bold text-primary">Bid history</h2>
+
+            <div id="bid-history" class="rounded-2xl bg-white p-6 shadow-md"></div>
+            </div>
+        </section>
+
+        <button
+        id="to-top-button"
+        class="to-top fixed bottom-6 right-12 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-primary bg-primary text-xl text-white opacity-0 pointer-events-none shadow-md transition-all duration-300 hover:bg-white hover:text-primary"
+        type="button"
+        aria-label="Scroll to top">
+        ↑
+        </button>
+
+    </main>
+
+    <footer class="bg-secondary text-white">
+        <div class="mx-auto flex items-start justify-between gap-10 py-16">
+
+            <div class="flex flex-col gap-6 pl-14">
+                <a href="../index.html">
+                    <img src="../src/logo/Logo-small.png" alt="Biddr Logo" class="h-10 w-auto hover:scale-105">
+                </a>
+
+               <p class="leading-relaxed text-sm">
+                You can get in touch with our call center.<br> 
+                Monday - Thursday from 9:00AM to 8:00PM <br>
+                Friday - Sunday from 9:00AM to 1:00PM.
+                </p>
+               
+               <p class="flex items-center gap-2 text-sm">
+                <img src="../src/icons/phone.png" alt="Phone icon" class="h-5 w-5">+1-340-618-7814</p>
+               <p class="flex items-center gap-2 text-sm">
+                <img src="../src/icons/mail.png" alt="Envelope icon" class="h-5 w-5">hello-biddr@mail.com</p>
+            </div>
+
+            <div>
+                <h2 class="font-bold text-xl mb-6">Useful Links</h2>
+
+                <nav class="grid grid-cols-2 gap-x-8 gap-y-2 mt-2">
+                    <div class="flex flex-col gap-2">
+                        <a href="../index.html" class="nav-link text-white">Home</a>
+                        <a href="../auctions/feed.html" class="nav-link text-white">Listings</a>
+                        <a href="../docs/about.html" class="nav-link text-white">About Us</a>
+                        <a href="../docs/contact.html" class="nav-link text-white">Contact</a>
+
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="../docs/privacy.html" class="nav-link text-white">Privacy Policy</a>
+                        <a href="../docs/terms.html" class="nav-link text-white">Terms of Service</a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="pr-28">
+                <p class="font-semibold text-sm mb-10">You can pay easily with:</p>
+
+                <div class="grid grid-cols-2 gap-x-6 gap-y-6 mt-2">
+                    <div class="flex flex-col gap-2">
+                        <img src="../src/logo/Vipps-Logo.wine 2.png" alt="Vipps" class="h-12 w-auto object-contain">
+                        <img src="../src/logo/Klarna-Logo.wine 2.png" alt="Klarna" class="h-12 w-auto object-contain">
+                    </div>
+
+                    <div class="flex flex-col gap-2">                    
+                        <img src="../src/logo/Mastercard-Logo.wine 2.png" alt="Mastercard" class="h-12 w-auto object-contain">
+                        <img src="../src/logo/Visa_Inc.-Logo.wine 2.png" alt="Visa" class="h-12 w-auto object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-auto px-10 py-8">        
+            <div class="border-t border-white pt-6 text-center text-sm">
+                <p>&copy; 2026 Biddr. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+    
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Google Fonts --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../src/favicon/site.webmanifest">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/output.css">
+
+    <!-- JavaScript -->
+     <script type="module" src="../scripts/auth/login.mjs"></script>
+</head>
+
+
+<body class="bg-primary min-h-screen flex items-center justify-center px-4">
+
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl px-8 py-10 transition hover:shadow-2xl">
+
+        <div class="flex justify-center mb-6">
+            <img src="../src/logo/Logo-main.png" alt="Biddr Logo" class="w-40 h-auto">
+        </div>
+
+        <section class="mb-6 text-center">
+            <h2 class="text-2xl font-semibold text-primary">Login</h2>
+        </section>
+        
+        <div class="login-form-container">
+            <form id="login-form" class="flex flex-col gap-4">
+
+                <div class="flex flex-col gap-2">
+                    <label for="email" class="text-primary font-medium">Email*</label>
+                    <input 
+                        name="email" 
+                        id="email" 
+                        type="email" 
+                        placeholder="Email@stud.noroff.no" 
+                        required
+                        class="w-full rounded-lg border border-primary px-4 py-3 text-primary placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+ 
+                <div> 
+                    <label for="password" class="text-primary font-medium">Password*</label>
+                    <input 
+                        name="password" 
+                        id="password" 
+                        type="password"
+                        placeholder="Password" 
+                        required 
+                        class="w-full rounded-lg border border-primary px-4 py-3 text-primary placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+
+                <p class="text-primary text-sm"> * Required field</p>
+
+                <button 
+                    type="submit" 
+                    class="mt-2 rounded-lg bg-primary px-4 py-3 text-white font-medium shadow-md transition duration-200 ease-in-out hover:opacity-90 hover:shadow-lg active:scale-95">Login</button>
+            </form>
+        </div>
+
+        <section class="mt-6">
+            <p class="text-primary text-sm">
+                Don't have an account? Please click 
+                <a href="register.html" class="font-semibold underline under-offset-2 transition ease-in-out duration-100 hover:opacity-80">here</a> to register.</p>
+        </section>
+    </div> 
+    
+</body>
+</html>
