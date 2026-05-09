@@ -310,9 +310,9 @@ async function initListings() {
 
                     return `
                         <a href="${listingPath}" 
-                        class="group grid grid-cols-2 overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-md">
+                        class="group grid overflow-hidden rounded-2xl border-2 border-gray-200 bg-white shadow-md md:grid-cols-2">
 
-                            <div class="relative h-80 overflow-hidden bg-gray-200">
+                            <div class="relative h-64 overflow-hidden bg-gray-200 md:h-80">
                                 <img
                                     src="${imageUrl}"
                                     alt="${imageAlt}"
@@ -322,7 +322,7 @@ async function initListings() {
                                 <div class="absolute inset-0 bg-black/0 transition duration-300 ease-in-out group-hover:bg-black/10"></div>
                             </div>
 
-                            <div class="flex flex-col justify-center gap-4 p-10">
+                            <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
                                 <p class="text-sm font-semibold uppercase tracking-wide text-gray-500">
                                     Recommended listing
                                 </p>

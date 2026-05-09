@@ -25,31 +25,57 @@
     <!-- JavaScript -->
      <script type="module" src="../scripts/pages/staticPages.mjs"></script>
 </head>
+
+
 <body class="bg-gray-100 font-sans">
 
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="mx-auto flex items-center justify-between px-24 py-6">
+    <header class="sticky top-0 z-50 relative bg-white shadow-md">
+        <div class="mx-auto flex items-center justify-between px-6 py-5 lg:px-24 lg:py-6">
 
             <a href="../index.html" class="shrink-0">
              <img src="../src/logo/Logo-main.png" alt="Biddr Logo" class="h-8 w-auto hover:scale-105">
             </a>
 
-            <nav>
-                <ul class="flex items-center gap-4 text-primary font-medium">
+            <nav class="hidden md:block">
+                <ul class="flex items-center gap-4 font-medium text-primary ">
                     <li><a id="nav-link-one" href="../account/login.html" class="nav-link">Login</a></li>
                     <li><a id="nav-link-two" href="../account/register.html" class="nav-link">Register</a></li>
                 </ul>            
             </nav>
 
+            <button
+                id="mobile-menu-button"
+                type="button"
+                class="flex h-10 w-10 items-center justify-center rounded-xl border border-primary bg-primary text-2xl text-white transition hover:bg-white hover:text-primary md:hidden"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+        </div>
+
+        <div id="mobile-menu" 
+            class="pointer-events-none absolute left-0 top-full z-50 w-full -translate-y-3 border-t border-gray-200 bg-white px-6 py-5 opacity-0 shadow-md transition-all duration-300 ease-out md:hidden">
+            <nav class="flex flex-col gap-4 font-medium text-primary">
+                <a href="../index.html" class=" block rounded-lg px-3 py-2 transition hover:bg-primary hover:text-white">Home</a>
+                <a href="../auctions/feed.html" class=" block rounded-lg px-3 py-2 transition hover:bg-primary hover:text-white">Listings</a>
+                <a href="../docs/about.html" class=" block rounded-lg px-3 py-2 transition hover:bg-primary hover:text-white">About</a>
+                <a href="../docs/contact.html" class=" block rounded-lg px-3 py-2 transition hover:bg-primary hover:text-white">Contact</a>
+                <a id="mobile-account-link" href="../account/profile.html" class="hidden block rounded-lg px-3 py-2 transition hover:bg-primary hover:text-white">My account</a>
+                <a id="mobile-credits-link" href="../account/credits.html" class="hidden block rounded-lg px-3 py-2 transition hover:bg-primary hover:text-white">
+                    Credits: <span id="mobile-nav-credits">0</span>
+                </a>
+                <a id="mobile-nav-link-one" href="../account/login.html" class="rounded-lg block px-3 py-2 transition hover:bg-primary hover:text-white">Login</a>
+                <a id="mobile-nav-link-two" href="../account/register.html" class="rounded-lg block px-3 py-2 transition hover:bg-primary hover:text-white">Register</a>
+            </nav>
         </div>
     </header>
 
     <main>
 
-        <section class="bg-primary shadow-sm">
-            <nav class="mx-auto flex items-center justify-between px-24 py-4">
+        <section class="hidden bg-primary shadow-sm md:block">
+            <nav class="mx-auto flex items-center justify-between px-10 py-4 lg:px-24">
 
-                <div class="flex items-center gap-6 mx-auto">
+                <div class="mx-auto flex items-center gap-6">
                     <a href="../index.html" class="nav-link text-white">Home</a>
                     <a href="../auctions/feed.html" class="nav-link text-white">Listings</a>
                     <a href="../docs/about.html" class="nav-link text-white">About</a>
@@ -68,18 +94,18 @@
             </nav>
         </section>
 
-        <section class="mx-auto max-w-6xl px-10 py-16">
+        <section class="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
 
             <div class="max-w-3xl">
                 <p class="mb-2 text-sm font-semibold tracking-wide text-primary">
                     About Biddr
                 </p>
 
-                <h1 class="text-5xl font-bold leading-tight text-primary">
+                <h1 class="text-4xl font-bold leading-tight text-primary md:text-5xl">
                     A modern marketplace built for online auctions
                 </h1>
 
-                <p class="mt-6 text-lg leading-relaxed text-gray-600">
+                <p class="mt-6 text-base leading-relaxed text-gray-600 md:text-lg">
                     Biddr is a digital auction platform where users can browse listings,
                     place bids, and discover unique items through a clean and modern marketplace experience.
                 </p>
@@ -87,19 +113,19 @@
 
         </section>
 
-        <section class="mx-auto max-w-6xl px-10 pb-16">
+        <section class="mx-auto max-w-6xl px-6 pb-12 md:px-10 md:pb-16">
 
             <div class="overflow-hidden rounded-3xl shadow-md">
                 <img 
-                    src="../src/images/placeholder.jpg" 
+                    src="../src/images/unsplash_nPz8akkUmDI.png" 
                     alt="Biddr marketplace"
-                    class="h-[500px] w-full object-cover">
+                    class="h-72 w-full object-cover md:h-[500px]">
             </div>
         </section>
 
-        <section class="mx-auto grid max-w-6xl grid-cols-2 gap-12 px-10 pb-20">
+        <section class="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 pb-16 md:px-10 lg:grid-cols-2 lg:gap-12 lg:pb-20">
 
-            <div class="rounded-2xl bg-white p-10 shadow-md">
+            <div class="rounded-2xl bg-white p-8 shadow-md md:p-10">
                 <p class="mb-2 text-sm font-semibold tracking-wide text-gray-500">
                     Our mission
                 </p>
@@ -114,7 +140,7 @@
                 </p>
             </div>
 
-            <div class="rounded-2xl bg-white p-10 shadow-md">
+            <div class="rounded-2xl bg-white p-8 shadow-md md:p-10">
                 <p class="mb-2 text-sm font-semibold tracking-wide text-gray-500">
                     Marketplace experience
                 </p>
@@ -131,19 +157,19 @@
 
         </section>
 
-        <section class="mx-auto max-w-6xl px-10 pb-24">
+        <section class="mx-auto max-w-6xl px-6 pb-20 md:px-10 md:pb-20">
 
-            <div class="rounded-3xl bg-primary p-14 text-white">
+            <div class="rounded-3xl bg-primary p-8 text-white md:p-14">
 
                 <p class="mb-2 text-sm font-semibold tracking-wide text-white/70">
                     Why choose Biddr
                 </p>
 
-                <h2 class="max-w-2xl text-4xl font-bold leading-right">
+                <h2 class="max-w-2xl text-3xl font-bold leading-tight md:text-4xl">
                     Designed to make buying and selling feel effortless
                 </h2>
 
-                <div class="mt-10 grid grid-col-3 gap-8">
+                <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
 
                     <div>
                         <h3 class="mb-3 text-xl font-bold">Modern interface</h3>
@@ -172,12 +198,20 @@
             </div>
         </section>
 
+        <button
+        id="to-top-button"
+        class="to-top fixed bottom-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-primary bg-primary text-lg text-white opacity-0 pointer-events-none shadow-md transition-all duration-300 hover:bg-white hover:text-primary md:bottom-6 md:right-12 md:h-12 md:w-12 md:text-xl"
+        type="button"
+        aria-label="Scroll to top">
+        ↑
+        </button>
+
     </main>
 
     <footer class="bg-secondary text-white">
-        <div class="mx-auto flex items-start justify-between gap-10 py-16">
+        <div class="mx-auto flex flex-col items-start justify-between gap-10 px-6 py-14 md:px-10 lg:flex-row lg:px-0 lg:py-16">
 
-            <div class="flex flex-col gap-6 pl-14">
+            <div class="flex flex-col gap-6 lg:pl-14">
                 <a href="../index.html">
                     <img src="../src/logo/Logo-small.png" alt="Biddr Logo" class="h-10 w-auto hover:scale-105">
                 </a>
@@ -212,7 +246,7 @@
                 </nav>
             </div>
 
-            <div class="pr-28">
+            <div class="lg:pr-28">
                 <p class="font-semibold text-sm mb-10">You can pay easily with:</p>
 
                 <div class="grid grid-cols-2 gap-x-6 gap-y-6 mt-2">
@@ -229,10 +263,9 @@
             </div>
         </div>
 
-        <div class="mx-auto px-10 py-8">        
+        <div class="mx-auto px-6 py-8 md:px-10">        
             <div class="border-t border-white pt-6 text-center text-sm">
-                <p>&copy; 2026 Biddr. All rights reserved.</p>
-            </div>
+            <p>&copy; 2026 Biddr. All rights reserved.</p>
         </div>
     </footer>
 </body>

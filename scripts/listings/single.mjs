@@ -206,7 +206,7 @@ function renderImageCarousel(listing) {
 
         renderItem: (image) => {
             return `
-                <div class="relative h-[520px] overflow-hidden border-2 border-gray-200 bg-gray-200 shadow-sm">
+                <div class="relative h-80 overflow-hidden border-2 border-gray-200 bg-gray-200 shadow-sm md:h-[520px]">
                     <img
                         src="${image.url}"
                         alt="${image.alt || listing.title}"

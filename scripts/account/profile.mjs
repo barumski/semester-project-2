@@ -8,6 +8,7 @@ requireAuth();
 updateNav();
 
 const profileAvatar = document.getElementById('profile-avatar');
+const profileBanner = document.getElementById('profile-banner');
 const profileName = document.getElementById('profile-name');
 const profileEmail = document.getElementById('profile-email');
 
@@ -73,6 +74,18 @@ function splitListings(listings = []) {
 }
 
 function renderProfile(profile) {
+
+    if (profileBanner && profile.banner?.url) {
+        profileBanner.src =
+            profile.banner.url;
+
+        profileBanner.alt =
+            profile.banner.alt ||
+            `${profile.name} profile banner`;
+
+        profileBanner.classList.remove('hidden');
+    }
+
     profileAvatar.src =
         profile.avatar?.url ||
         '../src/images/placeholder.jpg';
