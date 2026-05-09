@@ -80,6 +80,28 @@ npm install
 
 ---
 
+## Test User
+
+You can use the following account to test the application:
+
+```txt
+Username: sleten
+Email: sleten@stud.noroff.no
+Password: sleten1234
+```
+
+This account can be used to test:
+- Login/logout
+- Create listings
+- Edit listings
+- Delete listings
+- Profile customization
+- Bidding system
+- Credits system
+```
+
+--- 
+
 ## API
 
 This project uses the Noroff API v2 for:
