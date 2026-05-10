@@ -4,7 +4,16 @@ export function saveToStorage(key, value) {
 
 export function getFromStorage(key) {
     const value = localStorage.getItem(key);
-    return value ?JSON.parse(value) : null;
+
+    if (!value) {
+        return null;
+    }
+
+    try {
+        return JSON.parse(value);
+    } catch {
+        return value;
+    }
 }
 
 export function removeFromStorage(key) {
@@ -50,5 +59,4 @@ export function getTimeLeft(endDate, showSeconds = false) {
     }
 
     return `${minutes}m left`;
-
 }
